@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
+import './style/reset.css'
+import './style/main.css'
 
 export default class App extends Component {
     render() {
         return (
-            React.createElement('div', {className:'box', id: 'wrap'}, [
-                React.createElement('p', {className: 'op'}, ['这是p']),
-                React.createElement('span', {}, ['这是span']),
-                '这是文本内容--jsx原理'
-            ])
-            
+            <div>
+                <div className='box1'></div>
+
+                <div className='box2'></div>
+
+                <div className='box3'></div>
+
+                <div className='box4'></div>
+
+            </div>
         )
     }
     }
