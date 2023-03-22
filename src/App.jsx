@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function App(Props) {
-    return (
+export default class App extends Component {
+    render() {
+        return (
         <div>
-            <h5>{Props.title}</h5>
-            <h5>{Props.subTitle }</h5>
+            class组件
+            <h5>{this.props.title}</h5>
+            <h5>{this.props.subTitle}</h5>
         </div>
-    )
-}
+        
+        )
+    }
+    }
