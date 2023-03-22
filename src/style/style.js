@@ -34,10 +34,10 @@ const Box4 = styled.div`
 // 定义关键帧
 const move = keyframes`
     0% {
-        transform: rotate(45deg)
+        transform: rotate(75deg)
     }
     100% {
-        transform: rotate(-45deg)
+        transform: rotate(-75deg)
     }
 `
 // 使用动画
@@ -45,9 +45,9 @@ const Box5 = styled.div`
     width: 10px;
     height: 100px;
     background: red;
-    margin: 20px auto;
+    margin: 20px 100px;
     transform-origin: center bottom;
-    animation: ${move} 200ms infinite alternate linear;
+    animation: ${move} 500ms infinite alternate linear;
 `
 
 export {

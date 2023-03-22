@@ -10,13 +10,14 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <div className={styles.c}>css modules</div>
 
+                <Box5 />
                 <Box1 />
                 <Box2 />
                 <Box3 />
                 <Box4 />
-                <Box5 />
+                
+                <div className={styles.c}>css modules</div>
                 
                 {/* <div className='box1' style={{width: 100,height: 100,backgroundColor: 'pink'}}></div>
 
