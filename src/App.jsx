@@ -7,7 +7,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <div className='box1'></div>
+                <div className='box1' style={{width: 100,height: 100,backgroundColor: 'pink'}}></div>
 
                 <div className='box2'></div>
 
