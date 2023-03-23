@@ -1,27 +1,29 @@
 import React, { Component } from 'react'
-import './style/reset.css'
+
 export default class App extends Component {
+    state = {
+        arr: [1, 2, 3, 4, 5, 6]
+    }
     render() {
         return (
             <div>
-                <div className="box" onClick={this.clickBox}>
-                    <div className="box2" onClick={this.clickBox2}>
-                        <div className="box3" onClick={this.clickBox3}></div>
-                    </div>
-                </div>
+                <ul>
+                    {
+                        this.state.arr.map(el => (
+                            <li key={el} onClick={
+                                (e) => {
+                                    this.clickLi(el, e)
+                                }
+                            }>
+                                {el}
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         )
     }
-    clickBox = (e) => {
-        e.stopPropagation()
-        console.log(1);
-    }
-    clickBox2 = (e) => {
-        e.stopPropagation()
-        console.log(2);
-    }
-    clickBox3 = (e) => {
-        e.stopPropagation()
-        console.log(3);
+    clickLi = (el, e) => {
+        console.log(el, e);
     }
 }
