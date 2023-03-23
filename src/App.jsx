@@ -1,25 +1,27 @@
 import React, { Component } from 'react'
-
+import './style/reset.css'
 export default class App extends Component {
-    constructor(){
-        super()
-        this.state={
-            msg: 'hello, what are you doing?'
-        }
-    }
     render() {
         return (
             <div>
-                <button onClick={this.clickBtn}>changeMsg</button>
-                <br />
-                {this.state.msg}
+                <div className="box" onClick={this.clickBox}>
+                    <div className="box2" onClick={this.clickBox2}>
+                        <div className="box3" onClick={this.clickBox3}></div>
+                    </div>
+                </div>
             </div>
         )
     }
-    clickBtn=()=>{
-        console.log(this);
-        this.setState({
-            msg: 'msg is changed three hours ago'
-        })
+    clickBox = (e) => {
+        e.stopPropagation()
+        console.log(1);
+    }
+    clickBox2 = (e) => {
+        e.stopPropagation()
+        console.log(2);
+    }
+    clickBox3 = (e) => {
+        e.stopPropagation()
+        console.log(3);
     }
 }
