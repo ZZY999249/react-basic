@@ -1,33 +1,25 @@
 import React, { Component } from 'react'
-import './style/reset.css'
-import './style/main.css'
-import './style/ccc.scss'
-import styles from './style/App.module.css'
-import { Box1,Box2,Box3,Box4,Box5 } from "./style/style";
-
 
 export default class App extends Component {
+    constructor(){
+        super()
+        this.state={
+            msg: 'hello, what are you doing?'
+        }
+    }
     render() {
         return (
             <div>
-
-                <Box5 />
-                <Box1 />
-                <Box2 />
-                <Box3 />
-                <Box4 />
-                
-                <div className={styles.c}>css modules</div>
-                
-                {/* <div className='box1' style={{width: 100,height: 100,backgroundColor: 'pink'}}></div>
-
-                <div className='box2'></div>
-
-                <div className='box3'></div>
-
-                <div className='box4'></div> */}
-
+                <button onClick={this.clickBtn}>changeMsg</button>
+                <br />
+                {this.state.msg}
             </div>
         )
     }
+    clickBtn=()=>{
+        console.log(this);
+        this.setState({
+            msg: 'msg is changed three hours ago'
+        })
     }
+}
