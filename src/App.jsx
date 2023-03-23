@@ -8,7 +8,7 @@ export default class App extends Component {
         return (
             <div>
                 <ul>
-                    {this.state.arr.map((el,index)=>{
+                    {this.state.arr.map((el, index) => {
                         return (
                             <li key={el}>
                                 {el}
