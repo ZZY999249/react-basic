@@ -1,29 +1,28 @@
 import React, { Component } from 'react'
-
+import './style/reset.css'
 export default class App extends Component {
     state = {
-        arr: [1, 2, 3, 4, 5, 6]
+        isShow: true
     }
     render() {
         return (
             <div>
-                <ul>
-                    {
-                        this.state.arr.map(el => (
-                            <li key={el} onClick={
-                                (e) => {
-                                    this.clickLi(el, e)
-                                }
-                            }>
-                                {el}
-                            </li>
-                        ))
-                    }
-                </ul>
+                <button onClick={this.switchShow}>
+                    {this.state.isShow ? '隐藏' : '显示'}
+                </button>
+                {
+                    this.state.isShow
+                        ?
+                        <div className="box"></div>
+                        :
+                        <div className="box2"></div>
+                }
             </div>
         )
     }
-    clickLi = (el, e) => {
-        console.log(el, e);
+    switchShow = () => {
+        this.setState({
+            isShow: !this.state.isShow
+        })
     }
 }
