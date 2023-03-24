@@ -1,25 +1,50 @@
-import React, { Component, createRef } from 'react'
-import Todochild from './TodoChild'
-import TodoChild2 from './TodoChild2'
+import React, { Component } from 'react'
 
 export default class Todo extends Component {
-    // constructor() {
-    //     super()
-    //     this.refBtn = createRef()
-    //     this.refChild = createRef()
-    // }
+    state = {
+        msg: '初始值',
+        isChecked: true
+    }
     render() {
         return (
             <div>
-                父组件
-                <Todochild />
-                <br />
-                <TodoChild2 />
+                <div>
+                    <input type="text" defaultValue={this.state.msg} />
+                    <br />
+                    {this.state.msg}
+                    <hr />
+                    <input type="checkbox" defaultValue={this.state.isChecked} />
+                    {
+                        this.state.isChecked ? '真' : '假'
+                    }
+
+                    <hr />
+
+                    双向绑定
+
+                    <input type="text" value={this.state.msg} onChange={this.inputChange} />
+                    <br />
+                    {this.state.msg}
+
+                    <hr />
+                    <input type="checkbox" value={this.state.isChecked} onChange={this.handleChecked} />
+                    {
+                        this.handleChecked ? '真' : '假'
+                    }
+                </div>
             </div>
         )
     }
-    // componentDidMount() {
-    //     console.log(this.refBtn.current);
-    //     console.log(this.refChild.current);
-    // }
+    inputChange =(e)=>{
+        console.log(e.target.value);
+        this.setState({
+            msg: e.target.value
+        })
+    }
+    handleChecked =(e)=>{
+        this.setState({
+            isChecked: e.target.checked
+        })
+    }
+
 }
