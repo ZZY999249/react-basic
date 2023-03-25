@@ -15,7 +15,8 @@ export default class TodoContents extends Component {
                             <li key={index}>
                                 <span>{todo.content}</span>
                                 <div className='btns'>
-                                    <button>点击完成</button>
+                                
+                                    <button disabled ={todo.done? true:false} onClick={()=>{this.props.disabledChange(index)}}>点击完成</button>
                                     <button onClick={
                                         () => {
                                             this.props.delTodo(index)

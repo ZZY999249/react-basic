@@ -36,6 +36,7 @@ export default class TodoLists extends Component {
                 <TodoContents
                     todos={this.state.todos}
                     delTodo={this.delTodo}
+                    disabledChange={this.disabledChange}
                 />
             </div>
         )
@@ -62,9 +63,19 @@ export default class TodoLists extends Component {
     }
     delTodo = index => {
         const todos = [...this.state.todos]
-        todos.splice(index,1)
+        todos.splice(index, 1)
         this.setState({
             todos
+        })
+    }
+    disabledChange = index => {
+        const todosss = [...this.state.todos]
+        console.log(todosss[index].done);
+        todosss[index].done = true
+        this.setState({
+            todos: [
+                ...todosss,
+            ],
         })
     }
 }

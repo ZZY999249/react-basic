@@ -4,7 +4,7 @@ export default class TodoHeader extends Component {
     render() {
         return (
             <div className='todo-header'>
-                <input type="text" value={this.props.inputText} onChange={
+                <input type="text" placeholder='请输入待办事项' value={this.props.inputText} onChange={
                     (e)=>{
                         this.props.changeInput(e.target.value)
                     }
