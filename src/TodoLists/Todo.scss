@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.todo-container {
+    max-width: 500px;
+    padding: 50px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 9px;
+
+    .todo-header {
+        display: flex;
+        padding: 10px 0;
+
+        input {
+            flex: 1;
+        }
+
+        button {
+            background-color: #5c3737;
+        }
+    }
+
+    .todo-content{
+        li {
+            list-style: none;
+            height: 40px;
+            background-color: aquamarine;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+
+            span{
+                flex: 1
+            }
+        }
+    }
+}
+
