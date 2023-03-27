@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
-import A from './A'
-import B from './B'
+import React, { useState } from 'react'
+import Todo from './Todo'
 
-export default class App extends Component {
-    render() {
-        const data ={
-            a:10,
-            b:'hahahha',
-            c:'heiheiehei'
-        }
-        return (
-            <div id='app'>
-                <A {...data}/>
-                <hr />
-                <B />
-            </div>
-        )
-    }
+
+export default function App() {
+    const [isShow, setShow] = useState(true)
+    return (
+        <div>
+            <button onClick={
+                () => {
+                    setShow(!isShow)
+                }
+            }>
+                {isShow ? '隐藏' : '显示'}
+            </button>
+
+            {isShow && <Todo />}
+        </div>
+    )
 }
