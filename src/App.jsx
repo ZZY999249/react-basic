@@ -3,13 +3,15 @@ import A from './A'
 import B from './B'
 
 export default class App extends Component {
-    state = {
-        isShow: true
-    }
     render() {
+        const data ={
+            a:10,
+            b:'hahahha',
+            c:'heiheiehei'
+        }
         return (
             <div id='app'>
-                <A />
+                <A {...data}/>
                 <hr />
                 <B />
             </div>

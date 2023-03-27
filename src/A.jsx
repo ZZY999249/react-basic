@@ -1,29 +1,14 @@
 import React, { Component } from 'react'
-import { Consumer } from './context'
+import withTpl from './hoc/withTpl'
 
-export default class A extends Component {
+class A extends Component {
     render() {
-
+        console.log(this.props, '222');
         return (
-            <Consumer>
-                {
-                    ({ a, changea }) => {
-                        return (
-                            <>
-                                <h2>A组件</h2>
-                                <h3>{a}</h3>
-                                <button onClick={
-                                    () => {
-                                        changea(300)
-                                    }
-                                }>修改A</button>
-                            </>
-                        )
-                    }
-                }
-
-            </Consumer>
+            <div>
+                <h3>a组件</h3>
+            </div>
         )
-
     }
 }
+export default withTpl(A)
